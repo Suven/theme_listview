@@ -1,0 +1,21 @@
+{
+	"name": "listview",
+	"version": "0.1.0",
+	"desc": "Inspired by XBMCs Confluence",
+	"author": "Suven (with Cudos to Team XBMC)",
+	"url": "http://github.com/suven/listview",
+	"cover": {
+		"prefferedWidth": 200
+	},
+	"features": [
+		"Basic sorting"
+	],
+	 "devDependencies": {
+	    "grunt": "~0.4.2",
+	    "grunt-contrib-uglify": "~0.2.2",
+	    "grunt-contrib-coffee": "~0.8.0",
+	    "grunt-contrib-less": "~0.8.0",
+	    "grunt-contrib-imagemin": "0.4.0",
+	    "grunt-contrib-watch": "0.5.3"
+  	}
+}

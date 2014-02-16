@@ -1,0 +1,238 @@
+@import "./bootstrap/bootstrap.less";
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,300);
+
+body {
+	background-image: url('../img/tron_bg.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#movies {
+
+	tbody td span.quality {
+		.label;
+
+		&.SD {
+			.label-success;
+		}
+		&.HD {
+			.label-primary;
+		}
+	}
+
+}
+
+#options {
+	position: fixed;
+
+	top: 50%;
+	margin-top: -100px;
+
+	width: 200px;
+	height: 200px;
+	background-color: red;
+
+	z-index: 99;
+
+	background-color: rgba(0, 0, 0, 0.66);
+
+	border-width: 1px 0;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.15);
+
+	left: 0px;
+
+	transition: left 0.5s;
+
+	.grab {
+
+		span.glyphicon {
+			-webkit-transform:rotate(0deg);
+			transform: rotate(0deg);
+		}
+
+		&:hover {
+			span.glyphicon {
+				-webkit-transform:rotate(180deg);
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&.closed {
+		left: -200px;
+
+		.grab {
+
+			background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(255, 0, 0, 0.33) 100%);
+			background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.33) 100%); 
+			background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.33) 100%);
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0, 0, 0, 0.66)), color-stop(1, rgba(0, 0, 0, 0.33)));
+			background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.33) 100%);
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.33) 100%);
+
+			span.glyphicon {
+				-webkit-transform:rotate(180deg);
+				transform: rotate(180deg);
+			}
+
+			&:hover {
+				span.glyphicon {
+					-webkit-transform:rotate(0deg);
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+
+	.grab {
+		margin: 0;
+		padding: 0;
+
+		display: block;
+
+		position: absolute;
+		width: 34px;
+		height: 200px;
+
+		right: -34px; 
+		top: -1px;
+
+		background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.75) 100%);
+		background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.75) 100%); 
+		background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.75) 100%);
+		background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0, 0, 0, 0.75)), color-stop(1, rgba(0, 0, 0, 0.33)));
+		background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.75) 100%);
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.75) 100%);
+
+		cursor: pointer;
+
+		border-radius: 0 20px 20px 0;
+
+		border-width: 1px 1px 1px 0;
+		border-style: solid;
+		border-color: rgba(255, 255, 255, 0.15);
+
+		span.glyphicon {
+			position: absolute;
+			left: 4px;
+			top: 50%;
+			margin-top: -11px;
+
+			font-size: 22px;
+			color: rgba(255, 255, 255, 0.33);
+			text-shadow: 0 0 2px #000000;
+
+			-webkit-transition: -webkit-transform 0.6s;
+			transition: transform 0.6s;
+
+			opacity: 1;
+		}
+
+
+		&:hover {
+
+			background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.9) 100%);
+			background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.9) 100%); 
+			background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.9) 100%);
+			background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0, 0, 0, 0.66)), color-stop(1, rgba(0, 0, 0, 0.9)));
+			background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0,0,0,0.9) 100%);
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.9) 100%);
+
+			span.glyphicon {
+				color: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+}
+
+.container {
+
+	> .row {
+		position: relative;
+
+		> .box {
+			height: 100%;
+
+			margin-top: 1em;
+			padding-top: 1.5em;
+
+			border-radius: 20px 20px 0 0;
+
+			background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.66) 100%);
+			background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.66) 100%); 
+			background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.66) 100%);
+			background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0,0,0,0.66) 100%);
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.66) 100%);
+
+			box-shadow: inset 0 0 20px rgba(0,0,0,0.5),
+			0 0  2px rgba(0,0,0,0.4);
+
+			border-top: 1px solid rgba(255, 255, 255, 0.33);
+			border-left: 1px solid rgba(255, 255, 255, 0.25);
+			border-right: 1px solid rgba(255, 255, 255, 0.25);
+
+			overflow-y: scroll;
+
+		}
+	}
+}
+
+#movies.table tbody {
+	margin-bottom: 0.5em;
+
+	tr {
+		color: #999;
+		cursor: pointer;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.1);
+			color: #ccc;
+		}
+
+		td {
+			border-color: rgba(255,255,255,0.1);
+		}
+
+		&.active {
+
+			&:hover {
+				background-color: transparent;
+			}
+
+			color: #fff;
+			text-shadow: 0 0 1px black;
+			box-shadow: inset 1 0 2px #1f648b;
+			border-top: 1px solid rgba(17, 69, 126, 0.70);
+			border-left: 1px solid rgba(17, 69, 126, 0.60);
+			border-right: 1px solid rgba(17, 69, 126, 0.60);
+			border-bottom: 1px solid rgba(31, 100, 139, 0.70);
+			
+			z-index: 50;
+
+			td span.quality {
+				text-shadow: none;
+			}
+
+			td {
+				border: none;
+
+				&:first-of-type {
+					box-shadow: 0 0 4px black;
+				}
+
+				//background-color: transparent;
+				//background-image: linear-gradient(to bottom, rgba(17, 69, 126, 0.60) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 50%, rgba(62, 129, 167, 0.80) 100%);
+				background-color: rgba(17, 69, 126, 0.33);
+			}
+
+			+ tr td {
+				border: none;
+			}
+		}
+	}
+}
+
+.container > .row > .box.infos {
+	position: relative;
+}

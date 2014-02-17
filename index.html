@@ -1,46 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Movielist</title>
-    <link href="./css/style.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movielist</title>
+  <link href="./css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+      <![endif]-->
+    </head>
+    <body>
 
-  	<div id="options" class="closed">
-  		<div class="grab"><span class="glyphicon glyphicon-play-circle"></span></div>
-  	</div>
+     <div id="options" class="closed">
+      <div class="grab"><span class="glyphicon glyphicon-play-circle"></span></div>
+    </div>
     
-	<div class="container">
+    <div class="container">
 
-		<div class="row">
-  			<div class="col-md-13 box">
+      <div class="row visible-xs small_infos">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-22">
 
-				<table id="movies" class="table">
-					<tbody>
-					</tbody>
-				</table>
+          <div class="row">
+            <div class="col-xs-6">
+              <img src="./img/poster.png" class="movie_poster" />
+            </div>
+            <div class="col-xs-18">
+              <p class="movie_plot_short"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1"></div>
+      </div>
 
-  			</div>
-  			<div class="col-md-1"></div>
-  			<div class="col-md-10 box infos">
+      <div class="row">
+        <div class="col-xs-1 visible-xs"></div>
+        <div class="col-md-13 col-sm-12 col-xs-22 box movs">
 
-				Poster
+          <table id="movies" class="table">
+           <tbody>
+           </tbody>
+         </table>
 
-  			</div>
-  		</div>
+       </div>
+       <div class="col-md-1 col-sm-1 col-xs-1"></div>
+       <div class="col-md-10 col-sm-11 box infos hidden-xs">
 
-	</div>
+        <p class="text-center">
+          <img src="./img/poster.png" class="movie_poster" />
+        </p>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./data.js"></script>
-    <script src="./js/script.js"></script>
-  </body>
+        <hr>
+        <p class="text-center streamdetails">
+          <span class="movie_res">RES</span>
+          <span class="movie_codec">CODED</span>
+          <span class="movie_acodec">ACODED</span>
+          <span class="movie_channels">CHANNELS</span>
+          <span class="movie_ratio">RATIO</span>
+        </p>
+
+        <hr>
+        <p class="movie_plot"></p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div id="overlay"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery.lazyload.min.js"></script>
+  <script src="./data.js"></script>
+  <script src="./js/script.js"></script>
+</body>
 </html>

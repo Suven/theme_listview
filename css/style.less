@@ -1,5 +1,5 @@
 @import "./bootstrap/bootstrap.less";
-@import url(http://fonts.googleapis.com/css?family=Exo+2:400,300);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,300,200);
 
 body {
 	background-image: url('../img/tron_bg.jpg');
@@ -7,22 +7,47 @@ body {
 	background-attachment: fixed;
 }
 
+#overlay {
+	position: fixed;
+	width: 100%;
+	height: 9000px;
+
+	top: 0;
+	left: 0;
+
+	z-index: 100;
+
+	background-color: rgba(255, 255, 255, 0.2);
+	display: none;
+}
+
 #movies {
 
 	tbody td span.quality {
 		.label;
+		.label-primary;
 
-		&.SD {
-			.label-success;
+		&.fullHD {
+			background-color: rgba(0, 138, 194, 0.5);
 		}
-		&.HD {
-			.label-primary;
+		&.semiHD {
+			background-color: rgba(0, 194, 27, 0.2);
 		}
+		&.sd {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 
 }
 
 #options {
+
+	// FOR THE TIME BEING
+	display: none;
+	//
+
 	position: fixed;
 
 	top: 50%;
@@ -32,7 +57,7 @@ body {
 	height: 200px;
 	background-color: red;
 
-	z-index: 99;
+	z-index: 200;
 
 	background-color: rgba(0, 0, 0, 0.66);
 
@@ -173,7 +198,7 @@ body {
 			border-right: 1px solid rgba(255, 255, 255, 0.25);
 
 			overflow-y: scroll;
-
+			-webkit-overflow-scrolling: touch;
 		}
 	}
 }
@@ -194,7 +219,19 @@ body {
 			border-color: rgba(255,255,255,0.1);
 		}
 
+		font-weight: 200;
+
+		span.quality {
+			opacity: 0.5;
+		}
+
 		&.active {
+
+			font-weight: 400;
+
+			span.quality {
+				opacity: 1;
+			}
 
 			&:hover {
 				background-color: transparent;
@@ -218,11 +255,12 @@ body {
 				border: none;
 
 				&:first-of-type {
-					box-shadow: 0 0 4px black;
+					box-shadow: 0   -4px 4px -4px black,
+					-4px 0px 4px -4px black,
+					0    5px 5px -5px black;
 				}
+				
 
-				//background-color: transparent;
-				//background-image: linear-gradient(to bottom, rgba(17, 69, 126, 0.60) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 50%, rgba(62, 129, 167, 0.80) 100%);
 				background-color: rgba(17, 69, 126, 0.33);
 			}
 
@@ -233,6 +271,69 @@ body {
 	}
 }
 
-.container > .row > .box.infos {
-	position: relative;
+.small_infos {
+	margin-top: 1em;
+	color: #fff;
+
+	p.movie_plot {
+		height: 95px;
+		overflow: hidden;
+	}
+
+	img.movie_poster {
+		width: 100%;
+		height: auto;
+		box-shadow: 0 0 15px rgba(255,255,255,0.25),
+					0 0  2px rgba(0, 0, 0, 0.8);
+	}	
 }
+
+.container > .row > .box.infos {
+	padding: 1em;
+
+	position: relative;
+	color: rgba(255, 255, 255, 0.8);
+
+	hr {
+		margin: 0.5em 0;
+		border-color: rgba(255,255,255,0.1);
+	}
+
+	img.movie_poster {
+		height: 250px;
+		width: auto;
+		box-shadow: 0 0 15px rgba(255,255,255,0.25),
+					0 0  2px rgba(0, 0, 0, 0.8);
+	}
+
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.66);
+
+	.streamdetails {
+		margin: 0;
+
+		span {
+			.label;
+			.label-primary;
+
+			background-color: rgba(255, 255, 255, 0.3);
+			color: rgba(0, 0, 0, 0.6);
+			text-shadow: none;
+
+			font-weight: 400;
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	#options .grab {
+		width: 26px;
+		right: -26px; 
+
+		span.glyphicon {
+			left: 2px;
+			margin-top: -9px;
+			font-size: 18px;
+		}
+	}
+}  
